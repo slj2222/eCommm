@@ -9,7 +9,7 @@ export default function ItemCard({ item }) {
                 <img className="item-image" src={item.image} alt={item.description} />
             </div>
             <div className="inner-item-container">
-                <h4>{item.title}</h4>
+                <h4>{item.title.substring(0, 24)}...</h4>
             </div>
             <div className="inner-item-container">
                 <h3>$ {item.price}</h3>

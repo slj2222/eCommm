@@ -18,20 +18,21 @@ code {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-left: 45px;
+  margin-right: 45px;
 }
 
 .item-image {
-  max-block-size: 125px;
+  max-block-size: 150px;
 }
 
 .item-container {
+  padding-right: 30px;
+  padding-left: 30px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  align-content: center;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 .inner-item-container {
@@ -42,4 +43,7 @@ code {
   max-width: 200px;
   max-height: 175px;
   
+}
+h4 {
+  text-overflow:ellipsis;
 }

@@ -20,7 +20,7 @@ export default function Electronics() {
     })
 
     return (
-        <div>
+        <div className="outer-item-container">
             {mapElectronics}
         </div>
     )

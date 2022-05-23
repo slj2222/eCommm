@@ -18,7 +18,7 @@ export default function Jewelery() {
         )
     })
     return (
-        <div>
+        <div className="outer-item-container">
             {mapJewelery}
         </div>
     )

@@ -18,7 +18,7 @@ export default function WomensClothing() {
         )
     })
     return (
-        <div>
+        <div className="outer-item-container">
             {mapWomensClothing}
         </div>
     )
