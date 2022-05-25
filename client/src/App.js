@@ -9,6 +9,8 @@ import MensClothing from './components/MensClothing';
 import WomensClothing from './components/WomensClothing';
 import Electronics from './components/Electronics';
 import Jewelery from './components/Jewelery';
+import Footer from './components/Footer';
+import DetailItemCard from './components/DetailItemCard';
 
 
 function App() {
@@ -24,8 +26,10 @@ function App() {
             <Route path="/women's-clothing" element={<WomensClothing />} />
             <Route path="/jewelery" element={<Jewelery />} />
             <Route path="/electronics" element={<Electronics />} />
+            <Route path="/products/:id" element={<DetailItemCard />} />
           </Routes>
       </Router>
+      <Footer />
     </div>
   );
 }
