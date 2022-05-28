@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.navbar {
+ 
+  }
+
 .navbar-ul {
   display: flex;
   flex-direction: row;
@@ -22,6 +26,22 @@ code {
 } 
 a {
   text-decoration: none;
+}
+
+.navbar-outer-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-cart {
+  padding-right: 55px;
+}
+
+.navbar-links {
+  padding-left: 55px;
 }
 
 .outer-item-container {
@@ -75,3 +95,4 @@ li {
   width: 100%;
   height: 140px;
 }
+
