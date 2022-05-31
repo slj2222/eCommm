@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2022_05_28_134519) do
   enable_extension "plpgsql"
 
   create_table "cart_items", force: :cascade do |t|
-    t.string "cart_id"
-    t.integer "db_id"
+    t.integer "cart_id"
+    t.integer "key"
     t.float "price"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2022_05_28_134519) do
   end
 
   create_table "carts", force: :cascade do |t|
+    t.integer "session_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

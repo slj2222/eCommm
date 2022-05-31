@@ -3,15 +3,27 @@ import { useParams, Link } from "react-router-dom";
 
 export default function ItemCard({ item }) {
     // console.log(item)
-    const { id } = useParams()
+    // const { itemId } = useParams()
 
-    function handleClick() {
-
+    function handleClick(item) {
+        console.log(item)
+        fetch("/cart_items", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                cart_id: 1,
+                key: item.id,
+                price: item.price,
+                title: item.title,
+            })
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
     }
 
     return (
         <div className="item-container">
-            <Link to={`/products/${id}`}>
+            <Link to={`/products/${item.id}`}>
                 <div className="inner-item-container">
                     <img className="item-image" src={item.image} alt={item.description} />
                 </div>
@@ -27,7 +39,7 @@ export default function ItemCard({ item }) {
                 <p>{item.rating.count} total reviews</p>
             </div>
             <div className="inner-item-container">
-                <button onClick={() => handleClick}>Add to cart</button>
+                <button onClick={() => handleClick(item)}>Add to cart</button>
             </div>
         </div>
     )
