@@ -39,7 +39,7 @@ export default function ItemCard({ item }) {
                 <p>{item.rating.count} total reviews</p>
             </div>
             <div className="inner-item-container">
-                <button onClick={() => handleClick(item)}>Add to your cart</button>
+                <button onClick={() => handleClick(item)}>Add to cart</button>
             </div>
         </div>
     )
