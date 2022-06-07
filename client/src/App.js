@@ -2,6 +2,7 @@
 import './App.css';
 // import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import React, { useState, useEffect } from "react";
 import HomePage from './components/HomePage';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
@@ -14,20 +15,28 @@ import DetailItemCard from './components/DetailItemCard';
 
 
 function App() {
+  const [allItems, setAllItems] = useState([])
+  
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then(response => response.json())
+      .then(data => setAllItems(data))
+  }, [])
+
 
   return (
     <div className="App">
       <Router>
         <Header />
         <Navbar />
-          <Routes>
-            <Route path="/" element={<HomePage /> }/>
-            <Route path="/men's-clothing" element={<MensClothing />} />
-            <Route path="/women's-clothing" element={<WomensClothing />} />
-            <Route path="/jewelery" element={<Jewelery />} />
-            <Route path="/electronics" element={<Electronics />} />
-            <Route path="/products/:id" element={<DetailItemCard />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<HomePage allItems={allItems}/>} />
+          <Route path="/men's-clothing" element={<MensClothing allItems={allItems}/>} />
+          <Route path="/women's-clothing" element={<WomensClothing allItems={allItems}/>} />
+          <Route path="/jewelery" element={<Jewelery allItems={allItems} />} />
+          <Route path="/electronics" element={<Electronics allItems={allItems}/>} />
+          <Route path="/products/:id" element={<DetailItemCard />} />
+        </Routes>
       </Router>
       <Footer />
     </div>

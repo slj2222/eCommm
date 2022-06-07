@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
 
-export default function Jewelery() {
-    const [jewelery, setJewelery] = useState([])
-    
-  
-    useEffect(() => {
-      fetch("https://fakestoreapi.com/products")
-          .then(response => response.json())
-          .then(data => setJewelery(data.filter(item => item.category === "jewelery")))
-    },[])
-    
+export default function Jewelery({ allItems } ) {
+   
 
-    const mapJewelery = jewelery.map(jeweleryItem => {
+    const mapJewelery = allItems.filter(item => item.category === "jewelery").map(jeweleryItem => {
         return (
             <ItemCard key={jeweleryItem.id} item={jeweleryItem} />
         )
