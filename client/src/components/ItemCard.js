@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 
 export default function ItemCard({ item }) {
     // console.log(item)
-    // const { itemId } = useParams()
+    
 
     function handleClick(item) {
         console.log(item)
